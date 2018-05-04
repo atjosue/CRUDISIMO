@@ -147,8 +147,6 @@ $(document).ready(function(){
 		$("#modificarUsuario").on("click", function(){
 			var dataModificar = JSON.stringify($('#infoUsuarioEdit :input').serializeArray());
 
-			alert(dataModificar);
-
 			$.ajax({
 
 				type:'POST',
@@ -180,20 +178,17 @@ $(document).ready(function(){
 
 
 
-
 		//-------------------ELIMINAR-------------------------
 		 $(document).on("click",".eliminarUsuario", function(){
+
+		$("#modalEliminarUsuario").modal({backdrop: "static", keyboard: false});
           var idUsuario = $(this).attr("id");
 
-
-          $("#modalEliminarUsuario").modal({backdrop: "static", keyboard: false});
-
 		           $("#eliminarUsuario").on("click",function(){
-
 		         	$.ajax({
 
 		         		type: 'POST',
-		         		async:false,
+		         		dataType: 'json',
 		         		data:{idUsuario,idUsuario,key:'eliminar'},
 		         		url:'../controller/UsuarioController.php',
 
@@ -208,7 +203,9 @@ $(document).ready(function(){
 									closeOnCancel: true,
 
 								});
-
+								setTimeout(function() {
+									location.reload();
+								}, 1500);
 		         		}
 
 		         	}

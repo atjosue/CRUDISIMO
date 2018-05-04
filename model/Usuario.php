@@ -237,10 +237,19 @@ require_once 'Conexion.php';
         public function eliminar($id){
 
 
-            $sql = "UPDATE usuario u SET u.estado = '2'  WHERE u.id='".$id."'";
-            $info= $this->db->query($sql);
+            $sql = "UPDATE usuario u SET u.estado = 0  WHERE u.id='".$id."'";
+            $res = $this->db->query($sql);
+            $data = array();
 
-            return $data;
+        if ($res) {
+
+            $data['estado'] = true;
+            $data['descripcion'] = "El usuario se eliminó exitosamente";
+        }else{
+             $data['estado'] = false;
+             $data['descripcion'] = "Error al eliminar el usuario | error: ".$this->db->error;
+        }
+            return json_encode($data);
 
         }
 
