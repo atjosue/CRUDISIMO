@@ -85,11 +85,9 @@ if (isset($_POST['key'])) {
 
 		$id= $_POST['idUsuario'];
 
-		echo $id;
-		die();
-
 		$objusuario = new Usuario();
 		$data = $objusuario->eliminar($id);
+		echo $data;
 
 	}
 

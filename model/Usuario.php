@@ -217,6 +217,11 @@ require_once 'Conexion.php';
         public function eliminar($id){
 
 
+            $sql = "UPDATE usuario u SET u.estado = '2'  WHERE u.id='".$id."'";
+            $info= $this->db->query($sql);
+
+            return $data;
+
         }
 
     //fin de la clase usuarion

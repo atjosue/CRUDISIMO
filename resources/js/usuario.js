@@ -185,7 +185,6 @@ $(document).ready(function(){
 		 $(document).on("click",".eliminarUsuario", function(){
           var idUsuario = $(this).attr("id");
 
-          console.log(idUsuario);
 
           $("#modalEliminarUsuario").modal({backdrop: "static", keyboard: false});
 
