@@ -215,7 +215,7 @@ require_once 'Conexion.php';
 
         public function modificar($id)
         {
-            $sql = "update usuario set username = '".$this->username."', password = '".$this->password."', salt = '".$this->salt."', rol_id = ".$this->rol;
+            $sql = "update usuario set username = '".$this->username."', password = '".$this->password."', salt = '".$this->salt."', rol_id = ".$this->rol." where id=".$id;
 
 
         $res = $this->db->query($sql);
