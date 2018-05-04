@@ -200,3 +200,30 @@
             </div>
         </div> 
 </div>    
+<!-- FINNNNNNNNNNNNNNNN -->
+
+<!-- Modal de Eliminacion -->
+
+<div class="modal" tabindex="-1" role="dialog" id="modalEliminarUsuario" aria-labelledby="myModalLabel" aria-hidden="true">
+  <br><br><br><br><br><br>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">CUIDADO!!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> En realidad desea Borrar el Usuario?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="eliminarUsuario">ay Si</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ay no</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINNNNNNNNNNNNNNNN -->
+
