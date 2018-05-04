@@ -142,8 +142,8 @@ $(document).ready(function(){
 
 		 });
 
-				//Guardar Usuario modificado
-
+				
+		//-------------------MODIFICAR-------------------------
 		$("#modificarUsuario").on("click", function(){
 			var dataModificar = JSON.stringify($('#infoUsuarioEdit :input').serializeArray());
 

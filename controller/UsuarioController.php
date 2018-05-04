@@ -30,7 +30,27 @@ if (isset($_POST['key'])) {
 }
 // fin del isset
 
-	function agregar(){
+	function findUser(){
+		$objusuario = new Usuario();
+
+		$user =  $_POST['valor'];
+
+		$res =$objusuario->findUser($user);
+       
+		echo $res;
+
+	}
+
+	function getUser(){
+
+		$objUsuario = new usuario();
+		$idUsuario = $_POST['idUsuario'];
+		$res = $objUsuario->getUser($idUsuario);
+
+		echo $res;
+	}
+
+		function agregar(){
 
 		$info= $_POST['dataUsuario'];
 		$decodeInfo = json_decode($info);
@@ -47,37 +67,24 @@ if (isset($_POST['key'])) {
 
 	}
 
-	function findUser(){
-		$objusuario = new Usuario();
-
-		$user =  $_POST['valor'];
-
-		$res =$objusuario->findUser($user);
-
-		echo $res;
-
-	}
-
-	function getUser(){
-
-		$objUsuario = new usuario();
-		$idUsuario = $_POST['idUsuario'];
-		$res = $objUsuario->getUser($idUsuario);
-
-		echo $res;
-	}
-
 	function modificar(){
 		$info = $_POST['dataModificar'];
 		$infoJson = json_decode($info);
 
-		var_dump($infoJson);
-		die();
+		$idUsuario = $infoJson[0]->value;
 
 		$objUsuario = new Usuario();
-		$objusuario->setUsername($infoUsuario[0]);
 
+		$objUsuario->setUsername($infoJson[1]->value);
+		$objUsuario->setPassword($infoJson[2]->value);
+		$objUsuario->setSalt();
+		$objUsuario->setRol($infoJson[4]->value);
 
+		
+		
+		$res = $objUsuario->modificar($idUsuario);
+
+		echo $res;
 
 	}
 

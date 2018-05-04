@@ -164,23 +164,7 @@ require_once 'Conexion.php';
         return $data;
     }
     //fin del metodo
-    //metodo para guardar Usuario
-
-    public function saveUser(){
-        $sql="INSERT INTO usuario values(0,'".$this->username."','".$this->password."','".$this->salt."','".$this->estado."','".$this->rol."')";
-        $res = $this->db->query($sql);
-        $data = array();
-
-        if ($res) {
-
-            $data['estado'] = true;
-            $data['descripcion'] = "Datos Ingresados correcatamente";
-        }else{
-             $data['estado'] = false;
-             $data['descripcion'] = "Error al ingresar datos".$this->db->error;
-        }
-            return json_encode($data);
-    }
+    
 
         //METODO BUSCAR EL USUARIO 
         public function findUser($user){
@@ -208,9 +192,45 @@ require_once 'Conexion.php';
                 return json_encode($data);
         }
 
+        //metodo para guardar Usuario
+
+    public function saveUser(){
+        $sql="INSERT INTO usuario values(0,'".$this->username."','".$this->password."','".$this->salt."','".$this->estado."','".$this->rol."')";
+        $res = $this->db->query($sql);
+        $data = array();
+
+        if ($res) {
+
+            $data['estado'] = true;
+            $data['descripcion'] = "Datos Ingresados correcatamente";
+        }else{
+             $data['estado'] = false;
+             $data['descripcion'] = "Error al ingresar datos".$this->db->error;
+        }
+            return json_encode($data);
+    }
 
 
+        # MÉTODO PARA MODIFICAR
 
+        public function modificar($id)
+        {
+            $sql = "update usuario set username = '".$this->username."', password = '".$this->password."', salt = '".$this->salt."', rol_id = ".$this->rol." where id=".$id;
+
+
+        $res = $this->db->query($sql);
+        $data = array();
+
+        if ($res) {
+
+            $data['estado'] = true;
+            $data['descripcion'] = "Cambios efectuados correcatamente";
+        }else{
+             $data['estado'] = false;
+             $data['descripcion'] = "Error al guardar los cambios | error: ".$this->db->error;
+        }
+            return json_encode($data);
+        }
 
         //---------------------------ELIMINAR-------------------
 
