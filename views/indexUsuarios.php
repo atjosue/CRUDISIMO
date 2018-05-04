@@ -30,7 +30,7 @@
 				 		</thead>
 				 		<tbody>
 				 		<?php 
-			 				$objUsuario = new Usuario();
+			 		/*		$objUsuario = new Usuario();
 			 				$data = $objUsuario->getAll();
 			 				if ($data!=false) {
 			 					foreach ($data as  $value) {
@@ -44,7 +44,7 @@
 			 								</td>
 			 						      </tr>";
 			 					}
-			 				}
+			 				}*/
 
 			 			 ?>
 				 			

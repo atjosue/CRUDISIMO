@@ -1,6 +1,17 @@
 $(document).ready(function(){
 	//configuracion del data table
 	$("#listadoUsuarios").DataTable({
+		"bDeferRender": true,			
+		"sPaginationType": "full_numbers",
+			"ajax": {
+				"url": "../src/resDT.php",
+				"type": "POST"
+			},
+			"columns": [
+				{"data":  "Username"},
+				{"data":  "Password"},
+				{"data":  "Acciones"}
+			],
 		    "language": {
 		        "sProcessing":    "Procesando...",
 		        "sLengthMenu":    "Mostrar _MENU_ registros",

@@ -151,6 +151,33 @@ require_once 'Conexion.php';
         }
         return $dato;
     }
+
+    public function getAllJSON()
+    {
+        $sqlAll = "SELECT * from usuario WHERE estado = 1";
+        $info = $this->db->query($sqlAll);
+
+        $datos = ""; 
+        
+        while ($fila = $info->fetch_assoc()) {
+                
+            $editar = '<input type=\"button\" class=\"btn-success btn-sm editarUsuario\" id=\"'.$fila['id'].'\" value=\"Editar\">';
+            $eliminar = '<input type=\"button\" class=\"btn-danger btn-sm eliminarUsuario\" id=\"'.$fila['id'].'\" value=\"Eliminar\">';
+                
+            $datos .= ' {
+                            "Username": "'.$fila["username"].'",
+                            "Password": "'.$fila["password"].'",
+                            "Acciones": "'.$editar.$eliminar.'"
+                        },';
+
+        }
+
+        $datos = substr($datos,0, strlen($datos) - 1);
+
+        return '{"data" : ['.$datos.']}';
+    }
+
+
     // metodo para llenar el select
 
     public function getAllRol(){
