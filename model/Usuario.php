@@ -216,7 +216,11 @@ require_once 'Conexion.php';
 
         public function eliminar($id){
 
+<<<<<<< HEAD
             $sql= "";
+=======
+            //$sql=
+>>>>>>> 06b36c0f8cc651cd82266ac1742958a16232df32
 
         }
 

@@ -120,6 +120,7 @@ $(document).ready(function(){
 
 		$(document).on("click",".editarUsuario", function(){
 		 	var idUsuario = $(this).attr("id");
+		 	
 
 		 		$.ajax({
 
@@ -211,7 +212,9 @@ $(document).ready(function(){
 
 		         		}
 
-		         	});
+		         	}
+
+		         });
 
 		         });
          
