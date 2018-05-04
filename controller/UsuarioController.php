@@ -65,7 +65,7 @@ if (isset($_POST['key'])) {
 	}
 
 	function modificar(){
-		$info = $_POST['dataUsuarioE'];
+		$info = $_POST['dataModificar'];
 		$infoJson = json_decode($info);
 
 		var_dump($infoJson);

@@ -121,8 +121,6 @@ $(document).ready(function(){
 		$(document).on("click",".editarUsuario", function(){
 		 	var idUsuario = $(this).attr("id");
 
-		 	console.log(idUsuario);
-
 		 		$.ajax({
 
 				type:'POST',
@@ -133,7 +131,7 @@ $(document).ready(function(){
 
 					$("#usernameEdit").val(data.username);
 					$("#rolEdit").val(data.idRol);
-					$("#idiUsuario").val(data.IdUsuario);
+					$("#idUsuario").val(data.idUsuario);
 					$("#modalModificacionUsuario").modal({backdrop: "static", keyboard: false});
 
 				}
@@ -146,19 +144,17 @@ $(document).ready(function(){
 				//Guardar Usuario modificado
 
 		$("#modificarUsuario").on("click", function(){
-			var dataUsuarioE = JSON.stringify($('#infoUsuarioEdit :input').serializeArray());
+			var dataModificar = JSON.stringify($('#infoUsuarioEdit :input').serializeArray());
+
+			alert(dataModificar);
 
 			$.ajax({
 
 				type:'POST',
 				dataType: 'json',
-				data: {dataUsuarioE,dataUsuarioE,key:'modificar'},
+				data: {dataModificar,dataModificar,key:'modificar'},
 				url:"../controller/UsuarioController.php",
 				success : function(data){
-
-					//info informacionn
-					//error informacion
-					//warning peligro
 
 					if (data.estado==true) {
 						swal({
