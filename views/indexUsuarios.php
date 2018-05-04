@@ -60,6 +60,7 @@
 
 <!-- Modal de unsercion de usuario -->
 <div class="modal fade modal" id="modalIngresoUsuario" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <br><br><br>
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header " Style="height:45px;">
@@ -132,6 +133,7 @@
 
 <!-- Modal de modificacion de usuario -->
 <div class="modal fade modal" id="modalModificacionUsuario" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <br><br><br><br>
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header " Style="height:45px;">
