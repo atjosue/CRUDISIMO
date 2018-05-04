@@ -146,7 +146,7 @@
                           <div class="form-column col-md-4 col-sm-4 col-xs-4">
                                  <div class="form-group required">
                                      <label for="nombreCiclo" class="control-label">Username</label>
-                                     <input type="hidden" id="idUsuario">
+                                     <input type="hidden" id="idUsuario" name="idUsuario">
                                      <input type="text" class="form-control requerido"  
                                             placeholder="Username" name="username"  id="usernameEdit">
                                  </div>
