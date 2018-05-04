@@ -177,6 +177,18 @@ $(document).ready(function(){
 
 		});			
 
+
+
+
+		//-------------------ELIMINAR-------------------------
+		 $(document).on("click",".eliminarUsuario", function(){
+          var idUsuario = $(this).attr("id");
+
+          $("#modalEliminarUsuario").modal({backdrop: "static", keyboard: false});
+
+         
+         });
+
 				
 
 //fin del document ready
