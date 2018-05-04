@@ -209,6 +209,17 @@ require_once 'Conexion.php';
         }
 
 
+
+
+
+        //---------------------------ELIMINAR-------------------
+
+        public function eliminar($id){
+
+            $sql=
+
+        }
+
     //fin de la clase usuarion
 }
 

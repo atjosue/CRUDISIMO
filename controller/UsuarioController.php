@@ -17,6 +17,9 @@ if (isset($_POST['key'])) {
 			case 'modificar':
 				modificar();
 				break;
+			case 'eliminar':
+				eliminar();
+				break;
 			
 			default:
 				
@@ -75,6 +78,18 @@ if (isset($_POST['key'])) {
 		$objusuario->setUsername($infoUsuario[0]);
 
 
+
+	}
+
+	function eliminar(){
+
+		$id= $_POST['idUsuario'];
+
+		echo $id;
+		die();
+
+		$objusuario = new Usuario();
+		$data = $objusuario->eliminar($id);
 
 	}
 

@@ -184,10 +184,40 @@ $(document).ready(function(){
 		 $(document).on("click",".eliminarUsuario", function(){
           var idUsuario = $(this).attr("id");
 
+          console.log(idUsuario);
+
           $("#modalEliminarUsuario").modal({backdrop: "static", keyboard: false});
 
+		           $("#eliminarUsuario").on("click",function(){
+
+		         	$.ajax({
+
+		         		type: 'POST',
+		         		async:false,
+		         		data:{idUsuario,idUsuario,key:'eliminar'},
+		         		url:'../controller/UsuarioController.php',
+
+		         		success: function(data){
+		         			if (data.estado==true) {
+								swal({
+									title:"Exito!",
+									text: data.descripcion,
+									timer: 1500,
+									type: 'success',
+									closeOnConfirm: true,
+									closeOnCancel: true,
+
+								});
+
+		         		}
+
+		         	});
+
+		         });
          
          });
+
+
 
 				
 
