@@ -118,12 +118,12 @@
 
                     </div>
                     <div>
-                  	<button class="btn btn-primary  btn-sm " id="agregarUsuario" >Guardar</button>
+                  	
                   </div>
 
               </div>         
                <div class="modal-footer" id="modalFooter" >
-                  
+                  <button class="btn btn-primary  btn-sm " id="agregarUsuario" >Guardar</button>
                </div>
             </div>
         </div> 
@@ -191,12 +191,11 @@
 
                     </div>
                     <div>
-                  	<button class="btn btn-primary  btn-sm " id="modificarUsuario" >Guardar Cambios</button>
                   </div>
 
               </div>         
                <div class="modal-footer" id="modalFooter" >
-                  Bien hecho charlie
+                <button class="btn btn-primary  btn-sm " id="modificarUsuario" >Guardar Cambios</button>
                </div>
             </div>
         </div> 
