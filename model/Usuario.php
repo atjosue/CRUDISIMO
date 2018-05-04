@@ -216,7 +216,7 @@ require_once 'Conexion.php';
 
         public function eliminar($id){
 
-            $sql=
+            $sql= "";
 
         }
 
